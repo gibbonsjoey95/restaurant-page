@@ -76,6 +76,7 @@ nav {
 
 .title-container, .menu-title-container, .about-title-container {
     background-color: #ee964b;
+    /* background-color: #28afb0; */
     width: 100%;
     height: auto;
     display: flex;
@@ -106,6 +107,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .item-container {
@@ -127,4 +129,51 @@ nav {
 
 .item-price {
     font-size: 2rem;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hours-div {
+    background-color: #ee964b;
+    border-radius: 30px;
+    border: 5px solid #1f271b;
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hours-title {
+    font-size: 3rem;
+}
+
+.day-hours {
+    font-size: 1.5rem;
+}
+
+.contact-div {
+    background-color: #ee964b;
+    border-radius: 30px;
+    border: 5px solid #1f271b;
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-child {
+    font-size: 1.5rem;
+}
+
+.contact-title {
+    font-size: 3rem;
 }
