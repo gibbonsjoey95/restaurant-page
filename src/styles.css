@@ -102,14 +102,29 @@ nav {
     margin: 10px;
 }
 
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .item-container {
     background-color: #ee964b;
     border-radius: 30px;
     border: 5px solid #1f271b;
     width: 80%;
     margin: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.item-name {
+    font-size: 3rem;
+}
+
+.item-price {
+    font-size: 2rem;
 }
