@@ -8,9 +8,15 @@ const about = () => {
     const contactDiv = document.createElement('div')
 
     const h1 = document.createElement('h1')
+    const aboutTitleContainer = document.createElement('div')
     h1.textContent = 'About Us'
 
-    headerDiv.appendChild(h1)
+    h1.classList.add('title')
+
+    aboutTitleContainer.appendChild(h1)
+    aboutTitleContainer.classList.add("about-title-container")
+
+    headerDiv.appendChild(aboutTitleContainer)
 
     const hours = document.createElement('h2')
     hours.textContent = 'Hours'
