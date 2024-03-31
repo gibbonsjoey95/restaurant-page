@@ -1,3 +1,5 @@
+import { storeHours } from "./data"
+
 const about = () => {
     const aboutContainer = document.createElement('div')
 
@@ -13,53 +15,36 @@ const about = () => {
     const hours = document.createElement('h2')
     hours.textContent = 'Hours'
 
-    const hoursContainer = document.createElement('div')
+const hoursContainer = document.createElement('div')
 
-    const monday = document.createElement('p')
-    const tuesday = document.createElement('p')
-    const wednesday = document.createElement('p')
-    const thursday = document.createElement('p')
-    const friday = document.createElement('p')
-    const saturday = document.createElement('p')
-    const sunday = document.createElement('p')
+    storeHours.forEach((day) => {
+        const dayHours = document.createElement('p')
 
-    monday.textContent = "Monday: 10:30am - 12am"
-    tuesday.textContent = "Tuesday: 10:30am - 12am"
-    wednesday.textContent = "Wednesday: 10:30am - 12am"
-    thursday.textContent = "Thursday: 10:30am - 12am"
-    friday.textContent = "Friday: 10:30am - 1am"
-    saturday.textContent = "Saturday: 10:30am - 1am"
-    sunday.textContent = "Sunday: 10:30am - 12am"
+        dayHours.textContent = `${day.day}: ${day.open}am - ${day.close}am`
 
-    hoursContainer.appendChild(monday)
-    hoursContainer.appendChild(tuesday)
-    hoursContainer.appendChild(wednesday)
-    hoursContainer.appendChild(thursday)
-    hoursContainer.appendChild(friday)
-    hoursContainer.appendChild(saturday)
-    hoursContainer.appendChild(sunday)
+        hoursContainer.appendChild(dayHours)
+    })
 
     hoursDiv.appendChild(hours)
     hoursDiv.appendChild(hoursContainer)
 
-    const contact = document.createElement('h2')
-    contact.textContent = 'Contact Us'
+    const createElementWithText = (tag, text) => {
+        const element = document.createElement(tag)
+        element.textContent = text
+        return element
+    }
+    
+    const appendElements = (parent, ...children) => {
+        children.forEach((child) => parent.appendChild(child))
+    }
 
-    const phone = document.createElement('p')
-    phone.textContent = "Phone: 999-999-9999"
+    const contact = createElementWithText('h2', 'Contact Us')
+    const phone = createElementWithText('p', "Phone: 999-999-9999")
+    const email = createElementWithText('p', "Email: mightbeafakeemail@fakeemail.com")
+    const address = createElementWithText('p', "1234 Grove St, Dallas Tx")
 
-    const email = document.createElement('p')
-    email.textContent = "Email: mightbeafakeemail@fakeemail.com"
-
-    const address = document.createElement('p')
-    address.textContent = "1234 Grove St, Dallas Tx"
-
-
-    contactDiv.appendChild(contact)
-    contactDiv.appendChild(phone)
-    contactDiv.appendChild(email)
-    contactDiv.appendChild(address)
-
+    appendElements(contactDiv, contact, phone, email, address)
+    
     aboutContainer.appendChild(headerDiv)
     aboutContainer.appendChild(hoursDiv)
     aboutContainer.appendChild(contactDiv)
